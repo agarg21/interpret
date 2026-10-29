@@ -189,7 +189,7 @@ jobs:
           mkdir -p "tmp/zqmr/t"
           cp -R "python/interpret-core/tests/" "tmp/zqmr/t/"
           cd "tmp/zqmr/t"
-          python -m pytest -vv -n auto --cov=interpret --cov-report=xml
+          python -m pytest -vv -n logical --cov=interpret --cov-report=xml
       - name: pytest (win)
         if: ${{ startsWith(matrix.image, 'windows-') }}
         run: |
@@ -202,4 +202,4 @@ jobs:
           xcopy /E "python\interpret-core\tests\*" "tmp\zqmr\t\"
           cd "tmp/zqmr/t"
           $env:PATH += ";$env:GeckoWebDriver"
-          python -m pytest -vv -n auto --cov=interpret --cov-report=xml
+          python -m pytest -vv -n logical --cov=interpret --cov-report=xml
